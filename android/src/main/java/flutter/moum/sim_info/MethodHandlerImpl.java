@@ -17,6 +17,14 @@ class MethodHandlerImpl implements MethodChannel.MethodCallHandler {
     public MethodHandlerImpl() {
         mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
     }
+    
+    public MethodHandlerImpl(Context _context) {
+        if(_context != null)  {
+            context = _context;
+        }
+        
+        mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+    }
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
