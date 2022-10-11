@@ -21,7 +21,7 @@ public class SimInfoPlugin implements FlutterPlugin {
 
   private void setMethodChannel(Context context, BinaryMessenger messenger) {
     channel = new MethodChannel(messenger, "flutter.moum.sim_info");
-    channel.setMethodCallHandler(new MethodHandlerImpl());
+    channel.setMethodCallHandler(new MethodHandlerImpl(context));
 
   }
 
